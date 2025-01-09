@@ -23,6 +23,7 @@ class Yolov5Infer(object):
 
     def set_batch(self, batch = True):
         self.batch = batch
+
     def set_url(self, ip="0.0.0.0", port=8000):
         global url, client
         url = f"{ip}:{port}"
