@@ -1,0 +1,26 @@
+name: "pp_v4_rec"
+platform: "onnxruntime_onnx"
+max_batch_size: 6
+input: [
+    {
+        name: "x"
+        data_type: TYPE_FP32
+        format: FORMAT_NONE
+        dims: [3, 48, -1 ] # batch-size 不等于0，-1必须省略掉；
+    }
+]
+output: [
+    {
+        name: "softmax_2.tmp_0",
+        data_type: TYPE_FP32
+        dims: [-1, 6625]
+    }
+]
+instance_group: [
+    {
+        name: "paddle_ocr_ch_v4_rec_server_onnx"
+        kind: KIND_GPU
+        count: 1
+        gpus: [ 0 ]
+    }
+]
