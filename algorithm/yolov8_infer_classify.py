@@ -1,6 +1,6 @@
 # from ultralytics import YOLO
 # model = YOLO('./models/best.pt')
-# path = './images/dogs/FnUB5DtlS9SkxVjR.jpg'
+# path = './images/dogs/yolov8_classify_dog.jpg'
 # results = model(path)
 # probs = results[0].probs
 #
@@ -76,7 +76,7 @@ class classify_infer_yolov8():
 
 
 def onnx_infer_classfy():
-    image = Image.open('../datas/FnUB5DtlS9SkxVjR.jpg').convert('RGB')
+    image = Image.open('../datas/yolov8_classify_dog.jpg').convert('RGB')
     image = np.array(image)
     classify = classify_infer_yolov8(224, 224)
     results = classify.classify_image(image, 2)
@@ -84,7 +84,7 @@ def onnx_infer_classfy():
 
 
 def triton_infer_classfy():
-    image = Image.open('../datas/FnUB5DtlS9SkxVjR.jpg').convert('RGB')
+    image = Image.open('../datas/yolov8_classify_dog.jpg').convert('RGB')
     image = np.array(image)
     classify = classify_infer_yolov8(224, 224)
     results = classify.classify_image(image, 2, False)

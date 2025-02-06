@@ -21,7 +21,7 @@ class Yolov5Infer(object):
         self.confidence = confidence
         self.batch = False
 
-    def set_batch(self, batch = True):
+    def set_batch(self, batch=True):
         self.batch = batch
 
     def set_url(self, ip="0.0.0.0", port=8000):
